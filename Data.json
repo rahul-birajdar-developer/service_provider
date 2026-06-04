@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "name": "Rahul Birajdar",
+      "phone": "8956259961",
+      "email": "rbirajadar96@gmail.com",
+      "password": "rahul143",
+      "location": "lavangi",
+      "role": "customer",
+      "createdAt": "2026-05-27T16:59:13.607Z",
+      "userId": "U1779901153607",
+      "id": "yc6Rj-lv_3g"
+    }
+  ],
+  "providers": [
+    {
+      "name": "Rahul",
+      "phone": "8956259961",
+      "email": "p@gmail.com",
+      "password": "123",
+      "location": "lavangi",
+      "role": "provider",
+      "serviceType": "plumbing",
+      "experience": "6 year",
+      "createdAt": "2026-05-27T17:40:40.715Z",
+      "userId": "P1779903640715",
+      "id": "mYe4vfLXWY8"
+    }
+  ],
+  "serviceProviders": [
+    {
+      "id": "1",
+      "name": "Rajesh Kumar",
+      "logo": "RK",
+      "phone": "1234567890",
+      "serviceType": "Plumber",
+      "email": "rajeshkumar@gmail.com",
+      "password": "rajesh123",
+      "role": "provider",
+      "address": "Lavangi,413221 Solapur Maharashtra India",
+      "city": "Solapur",
+      "description": "Experienced plumber with 10 years of service in Solapur. Specializing in residential and commercial plumbing solutions. Reliable, efficient, and affordable services for all your plumbing needs.",
+      "createdAt": "2024-06-01T12:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Suresh Mehta",
+      "logo": "SM",
+      "phone": "9876543210",
+      "serviceType": "Electrician",
+      "email": "sureshmehta@gmail.com",
+      "password": "suresh123",
+      "role": "provider",
+      "address": "Lavangi,413221 Solapur Maharashtra India",
+      "city": "Solapur",
+      "description": "Skilled electrician with 15 years of experience in Solapur. Offering a wide range of electrical services including wiring, lighting installation, and electrical repairs. Committed to providing safe and efficient solutions for residential and commercial clients.",
+      "createdAt": "2024-06-01T12:00:00Z"
+    }
+  ],
+  "bookings": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
