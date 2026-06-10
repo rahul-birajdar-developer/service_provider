@@ -53,8 +53,7 @@
     font-size: 13px;
     font-weight: 600;
     border: 1.5px solid var(--border);
-    background: #fff;
-    color: var(--brown-mid);
+    color: #f0eff5;
     cursor: pointer;
     transition: all 0.15s;
 }
@@ -65,13 +64,11 @@
 }
 
 .bk-filter.active {
-    background: var(--accent);
-    color: #fff;
+    color: #f0eff5;
     border-color: var(--accent)
 }
 
 .booking-card {
-    background: #fff;
     border: 1px solid var(--border);
     border-radius: var(--r);
     overflow: hidden;
@@ -104,6 +101,19 @@
     gap: 16px;
 }
 
+.btn-outline {
+    padding: 6px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #f0eff5;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+
 .bk-provider-avatar {
     width: 52px;
     height: 52px;
@@ -127,7 +137,7 @@
 
 .bk-service-name {
     font-size: 13px;
-    color: var(--brown-mid);
+    color: #f0eff5;
     margin-bottom: 5px
 }
 
@@ -163,7 +173,7 @@
 
 .bk-id {
     font-size: 11px;
-    color: var(--brown-mid);
+    color: #f0eff5;
     font-weight: 600
 }
 
@@ -219,7 +229,7 @@
 .bk-detail .bk-label {
     font-size: 11px;
     font-weight: 700;
-    color: var(--brown-mid);
+    color: #f0eff5;
     text-transform: uppercase;
     letter-spacing: 0.05em
 }
@@ -227,7 +237,7 @@
 .bk-detail .bk-val {
     font-size: 13px;
     font-weight: 600;
-    color: var(--brown)
+    color: #f0eff5
 }
 
 .bk-detail .bk-val.price {

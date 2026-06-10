@@ -1,4 +1,5 @@
 import './App.css'
+// import Provider from './Provider Component/provider'
 import AppFooter from './Component/AppFooter'
 import AppNavbar from './Component/AppNavbar'
 import BookingForm from './Component/BookingForm'
@@ -19,10 +20,11 @@ function App() {
 
   return (
     <>
+      {/* User Page Logic */}
       {
         showSignup ? (
           <Routes>
-            <Route path='signup' element={<SignUpForm />}/>
+            <Route path='signup' element={<SignUpForm />} />
           </Routes>
         ) : (
           <>
@@ -38,40 +40,13 @@ function App() {
               <Route path="/profile" element={<UserProfile />} />
               <Route path="/viewbookings" element={<UserBookingPage />} />
             </Routes>
-
             <AppFooter />
           </>
         )
       }
-      {/* {showSignup ? <SignUpForm /> : (
-        <>
-          <AppNavbar setShowSignup={setShowSignup} />
-          <Routes>
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/search" element={<SearchProvider />} />
-            <Route path="/services" element={<ProvidedService />} />
-            <Route path="/booking" element={<BookingForm />} />
-            <Route path="/feedback" element={<FeedBack />} />
-            <Route path="/providers" element={<TopRatedProvider />} />
-            <Route path="/profile" element={<UserProfile />} />
-            <Route path="/viewbookings" element={<UserBookingPage />} />
-          </Routes>
-          <AppFooter />
-        </>
-      )} */}
-      {/* <AppNavbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<SearchProvider />} />
-        <Route path="/services" element={<ProvidedService />} />
-        <Route path="/booking" element={<BookingForm />} />
-        <Route path="/feedback" element={<FeedBack />} />
-        <Route path="/providers" element={<TopRatedProvider />} />
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/viewbooking" element={<UserBookingPage />} />
-      </Routes>
-      <AppFooter /> */}
 
+      {/* Provider Page Logic */}
+      {/* <Provider /> */}
     </>
   )
 }

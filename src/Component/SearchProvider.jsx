@@ -1,8 +1,5 @@
-function SearchProvider() {
+function SearchProvider({ setLocation, filterByLocation }) {
 
-    const showToast = () => {
-        console.log("Searching Provider !!")
-    }
     return (
         <>
             <div className="search-section">
@@ -11,7 +8,8 @@ function SearchProvider() {
                     <div className="search-row">
                         <div className="search-field">
                             <label>Service Type</label>
-                            <select title="select">
+                            <select title="select" onChange={(e) => setLocation(e.target.value)}>
+                                <option value="">Select Service Type</option>
                                 <option>Plumbing</option>
                                 <option>Electrical</option>
                                 <option>Cleaning</option>
@@ -24,9 +22,9 @@ function SearchProvider() {
                         </div>
                         <div className="search-field">
                             <label>Your Location</label>
-                            <input type="text" placeholder="e.g. Koregaon Park, Pune" />
+                            <input type="text" placeholder="e.g. Koregaon Park, Pune" onChange={(e) => setLocation(e.target.value)} />
                         </div>
-                        <button className="search-btn" onClick={showToast('🔍 Searching for providers near you...')}>Search
+                        <button className="search-btn" onClick={filterByLocation}>Search
                             Pros</button>
                     </div>
                 </div>

@@ -1,56 +1,148 @@
-
+import { useState } from "react";
 
 function BookingForm() {
+    const [formData, setFormData] = useState({
+        customerName: "",
+        phone: "",
+        email: "",
+        service: "",
+        bookingDate: "",
+        bookingTime: "",
+        address: "",
+        notes: "",
+    });
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log("Booking Data:", formData);
+
+        alert("Booking Submitted Successfully!");
+
+        setFormData({
+            customerName: "",
+            phone: "",
+            email: "",
+            service: "",
+            bookingDate: "",
+            bookingTime: "",
+            address: "",
+            notes: "",
+        });
+    };
+
     return (
-        <>
-            <div className="modal-overlay" id="modal" >
-                <div className="modal">
-                    <button className="modal-close" >✕</button>
-                    <h2 id="modal-title">Welcome Back</h2>
-                    <p id="modal-sub">Sign in to your FixIt Pro account</p>
-                    <div className="tabs" id="modal-tabs">
-                        <button className="tab active" >Log In</button>
-                        <button className="tab" >Sign Up</button>
+        <div className="booking-container">
+            <form className="booking-form" onSubmit={handleSubmit}>
+                <h2>Book Service Provider</h2>
+
+                <div className="form-group">
+                    <label>Full Name</label>
+                    <input
+                        type="text"
+                        name="customerName"
+                        value={formData.customerName}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Phone Number</label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Select Service</label>
+                    <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="">Choose Service</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="Plumber">Plumber</option>
+                        <option value="Painter">Painter</option>
+                        <option value="Carpenter">Carpenter</option>
+                        <option value="Cleaner">Cleaner</option>
+                    </select>
+                </div>
+
+                <div className="row">
+                    <div className="form-group">
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            name="bookingDate"
+                            value={formData.bookingDate}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
-                    <div id="form-login">
-                        <div className="form-group"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
-                        <div className="form-group"><label>Password</label><input type="password" placeholder="••••••••" /></div>
-                        <button className="form-submit" >Log In</button>
-                        <div className="modal-divider">or</div>
-                        <a className="admin-link" href="admin.html">Go to Admin Dashboard →</a>
-                    </div>
-                    <div id="form-signup" style={{display:"block"}}>
-                        <div className="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" /></div>
-                        <div className="form-group"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
-                        <div className="form-group"><label>Phone</label><input type="tel" placeholder="+91 98765 43210" /></div>
-                        <div className="form-group"><label>Password</label><input type="password" placeholder="Create password" />
-                        </div>
-                        <button className="form-submit"
-                        >Create Account</button>3
-                    </div>
-                    <div id="form-provider" style={{ display: "block" }}>
-                        <div className="form-group"><label>Full Name</label><input type="text" placeholder="Your full name" /></div>
-                        <div className="form-group"><label>Service Category</label>
-                            <select>
-                                <option>Plumbing</option>
-                                <option>Electrical</option>
-                                <option>Cleaning</option>
-                                <option>Carpentry</option>
-                                <option>Painting</option>
-                                <option>AC Repair</option>
-                            </select>
-                        </div>
-                        <div className="form-group"><label>Experience (years)</label><input type="number" placeholder="e.g. 5" />
-                        </div>
-                        <div className="form-group"><label>Email</label><input type="email" placeholder="you@example.com" /></div>
-                        <div className="form-group"><label>Phone</label><input type="tel" placeholder="+91 98765 43210" /></div>
-                        <button className="form-submit"
-                        >Apply as Provider</button>
+
+                    <div className="form-group">
+                        <label>Time</label>
+                        <input
+                            type="time"
+                            name="bookingTime"
+                            value={formData.bookingTime}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
                 </div>
-            </div>
-        </>
-    )
+
+                <div className="form-group">
+                    <label>Address</label>
+                    <textarea
+                        rows="3"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Additional Notes</label>
+                    <textarea
+                        rows="4"
+                        name="notes"
+                        value={formData.notes}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <button type="submit" className="book-btn">
+                    Book Now
+                </button>
+            </form>
+        </div>
+    );
 }
 
 export default BookingForm;
